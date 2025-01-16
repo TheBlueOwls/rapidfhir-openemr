@@ -13,6 +13,7 @@ services:
     command: ['mysqld','--character-set-server=utf8mb4']
     volumes:
     - databasevolume:/var/lib/mysql
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
   openemr:
@@ -37,3 +38,4 @@ volumes:
   logvolume01: {}
   sitevolume: {}
   databasevolume: {}
+
